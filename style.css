@@ -9,7 +9,7 @@ section {
     display: grid;
     justify-items: center;
     grid-template-rows: 30% 50%;
-    background: no-repeat url("img1.jpg");
+    background: no-repeat url("image/img1.jpg");
     background-size: cover;
 }
 header{
@@ -31,6 +31,8 @@ h1 {
     width: 100%;
 }
 .menu__sticks {
+    position: relative;
+    align-items:center;
     width: 4vw;
     display: grid;
     align-content: center;
@@ -43,32 +45,19 @@ h1 {
     width: 100%;
     background: black;
 }
-.menu__sticks:hover{
-position: relative;
-align-items:center;
-}
-.menu__sticks:hover .menu__stick{
-position: absolute;
-}
-.menu__sticks:hover .menu__stick:nth-child(1){
-    transform: rotate(45deg);
-    transition-duration: 0.5s;
-}
-.menu__sticks:hover .menu__stick:nth-child(2){
-    opacity: 0;
-}
-.menu__sticks:hover .menu__stick:nth-child(3){
-    transform: rotate(-45deg);
-    transition-duration: 0.5s;
+.menu__stick_position-absolute {
+    position: absolute;
 }
 nav {
     background:rgba(128, 128, 128, 0.274);
-    height: 12vw;
+    height: 0vw;
     width: 70vw;
+    overflow: hidden;
+    transition-duration: 0.5s;
 }
 .menu__nav {
-    height: 100%;
-    width: 100%;
+    height: 12vw;
+    width: 70vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items:center;
@@ -100,22 +89,22 @@ nav {
     width: 8vw;
 }
 .menu__link:nth-child(1) {
-    background: url("img2.jpg");
+    background: url("image/img2.jpg");
     background-size: cover;
 }
 .menu__link:nth-child(2) {
-    background: url("img3.webp");
+    background: url("image/img3.webp");
     background-size: cover;
 }
 .menu__link:nth-child(3) {
-    background: url("img4.jpg");
+    background: url("image/img4.jpg");
     background-size: cover;
 }
 .menu__link:nth-child(4) {
-    background: url("img5.webp");
+    background: url("image/img5.webp");
     background-size: cover;
 }
 .menu__link:nth-child(5) {
-    background: center url("img6.jpg");
+    background: center url("image/img6.jpg");
     background-size: cover;
 }
