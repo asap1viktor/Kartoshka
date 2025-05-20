@@ -2,7 +2,6 @@ const menuButton = document.querySelector('.menu__button'),
       nav = document.querySelector('nav'),
       menuStick = document.querySelectorAll('.menu__stick');
 
-
       
 menuButton.addEventListener('click', () => {
     if (nav.style.height == '12vw') {
@@ -24,3 +23,10 @@ menuButton.addEventListener('click', () => {
         menuStick[2].style.cssText = 'transform: rotate(-45deg); transition-duration: 0.5s;';
     }
 });
+
+
+let age = prompt("Сколкьо вам лет?");
+function checkAge(age) {
+return (age > 18) ?  true : confirm('Родители разрешили?');
+}
+console.log(checkAge(age));

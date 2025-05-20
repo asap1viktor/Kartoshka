@@ -3,7 +3,6 @@ body {
 }
 section {
     height: 100vh;
-    width: 100vw;
 }
 .menu {
     display: grid;
@@ -53,7 +52,7 @@ nav {
     height: 0vw;
     width: 70vw;
     overflow: hidden;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
 }
 .menu__nav {
     height: 12vw;
@@ -75,7 +74,9 @@ nav {
     filter: grayscale(100%);
 }
 .menu__link:hover {
+    transform: scale(1.2);
     filter: grayscale(0%);
+    box-shadow: 0 0 2vw 1vw white;
 }
 .menu__link:hover p{
     transform:scale(1.1);
@@ -91,6 +92,7 @@ nav {
 .menu__link:nth-child(1) {
     background: url("image/img2.jpg");
     background-size: cover;
+    
 }
 .menu__link:nth-child(2) {
     background: url("image/img3.webp");
@@ -107,4 +109,59 @@ nav {
 .menu__link:nth-child(5) {
     background: center url("image/img6.jpg");
     background-size: cover;
+}
+
+
+.contacts {
+    display: grid;
+    align-items:end;    
+}
+.contacts__content {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 60% 40%;
+    background:rgba(59, 63, 55, 0.699);
+}
+.content__point {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vw;
+    text-shadow: 0 0 1vw white ;
+}
+.content__map {
+    justify-self: center;
+    align-self: center;
+    justify-items: center;
+}
+.contacts__wrapper {
+    display: grid;
+    align-content:space-around;
+}
+.contacts__wrapper div {
+    width: 100%;
+    border: red 1px solid;
+    height: 4vw;
+    display: grid;
+    grid-template-columns: 20% 20% 60%;
+    justify-items: center;
+}
+.contacts__wrapper div a {
+    width: 15vw;
+    height: 4vw;
+    border: 1px solid white;
+    align-self:center;
+    font-size: 2vw;
+    color:wheat;
+    text-decoration:none;
+}
+.contacts__wrapper div a:nth-child(1) {
+    width: 4vw;
+}
+.contacts__phone {
+    background:no-repeat url("image/phone.png");
+    background-size:cover;
+    transition-duration: 0.3s;
+}
+.contacts__phone:hover {
+    transform: scale(1.2);
+    
 }
