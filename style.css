@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 section {
     height: 100vh;
@@ -110,48 +111,58 @@ nav {
     background: center url("image/img6.jpg");
     background-size: cover;
 }
-
-
 .contacts {
     display: grid;
     align-items:end;    
 }
 .contacts__content {
+    transition-duration: 3s;
     display: grid;
-    height: 50vh;
-    grid-template-columns: 60% 40%;
+    height: 55vh;
+    grid-template-columns: 60% 30%;
     background:rgba(59, 63, 55, 0.699);
 }
 .content__point {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2vw;
-    text-shadow: 0 0 1vw white ;
+    border: 1px solid white;
+    color:wheat;
+    width: 25vw;
+    height: 4vw;
+    display: grid;
+    align-content:center;
+    justify-content: center ;
 }
 .content__map {
-    justify-self: center;
+    display: grid;
+    row-gap: 1.5vw;
     align-self: center;
     justify-items: center;
 }
 .contacts__wrapper {
     display: grid;
     align-content:space-around;
+    justify-self: center;
 }
 .contacts__wrapper div {
     width: 100%;
-    border: red 1px solid;
     height: 4vw;
     display: grid;
-    grid-template-columns: 20% 20% 60%;
-    justify-items: center;
+    grid-template-columns: 20vw auto;
+    justify-items:center;
 }
 .contacts__wrapper div a {
+    display: grid;
+    justify-content:center;
     width: 15vw;
     height: 4vw;
-    border: 1px solid white;
-    align-self:center;
     font-size: 2vw;
     color:wheat;
     text-decoration:none;
+    align-content:center;
+}
+.contacts__wrapper div a:nth-child(2n) {
+    border: 1px solid white;
 }
 .contacts__wrapper div a:nth-child(1) {
     width: 4vw;
@@ -161,7 +172,47 @@ nav {
     background-size:cover;
     transition-duration: 0.3s;
 }
-.contacts__phone:hover {
-    transform: scale(1.2);
-    
+
+.contacts__mail {
+    background:no-repeat url("image/mail.png");
+    background-size:cover;
+    transition-duration: 0.3s;
+}
+.contacts__vk {
+    background:no-repeat url("image/vk.png");
+    background-size:cover;
+    transition-duration: 0.3s;
+}
+.contacts__teleg {
+    background:no-repeat url("image/teleg.png");
+    background-size:cover;
+    transition-duration: 0.3s;
+}
+.contacts__wrapper div a:hover {
+    transform: scale(1.3);
+    transition: 0.2s;
+}
+
+.contacts__animation{
+    width: 100%;
+    height: 100;
+    border:1px solid black;
+}
+.contacts__car {
+    background: url("image/car.png");
+    background-size: cover;
+    width: 20vw;
+    height: 10vw;
+    border:1px solid black;
+    animation: move 10s infinite;
+    position: absolute;
+    display: grid;
+}
+@keyframes move {
+    0% {
+        margin-left: -30vw;
+    }
+    100% {
+        margin-left: +100vw;
+    }
 }

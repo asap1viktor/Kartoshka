@@ -1,7 +1,9 @@
 const menuButton = document.querySelector('.menu__button'),
       nav = document.querySelector('nav'),
-      menuStick = document.querySelectorAll('.menu__stick');
-
+      menuStick = document.querySelectorAll('.menu__stick'),
+      menuLink = document.querySelectorAll('.menu__link'),
+      section = document.querySelectorAll('section'),
+      contactsContent = document.querySelector('.contacts__content');
       
 menuButton.addEventListener('click', () => {
     if (nav.style.height == '12vw') {
@@ -24,9 +26,35 @@ menuButton.addEventListener('click', () => {
     }
 });
 
+menuLink[2].addEventListener('click', () => {
+    window.scrollTo({
+        top: section[1].offsetTop,
+        left: 0,
+        behavior: "smooth"
+    });
 
-let age = prompt("Сколкьо вам лет?");
-function checkAge(age) {
-return (age > 18) ?  true : confirm('Родители разрешили?');
+});
+
+function apiActive() {
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6
+    };
+
+    let contacts = function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                contactsContent.style.cssText='transform: translate(0, 0); opacity: 1;';
+            }
+            else {
+                contactsContent.style.cssText='transform: translate(0, 20vh); opacity: 0;';
+            }
+        });
+    };
+    //Наблюдатель
+    let observerMonsters = new IntersectionObserver(contacts, options);
+    //Определяем элементы за которыми наблюдаем
+    let targetMonsters = section[1];
+    observerMonsters.observe(targetMonsters);
 }
-console.log(checkAge(age));
